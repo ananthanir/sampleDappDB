@@ -13,7 +13,7 @@ const port = 5000;
 
 const pool = new Pool({
   user: 'exampleuser',
-  host: 'localhost',
+  host: '192.168.1.101',
   database: 'exampledb',
   password: 'examplepass',
   port: 5432,
@@ -27,7 +27,7 @@ app.post('/api/data', async (req, res) => {
   const { data } = req.body;
   console.log('Received data:', data);
 
-  const provider = new JsonRpcProvider("http://127.0.0.1:8545");
+  const provider = new JsonRpcProvider("http://192.168.1.100:8545");
   const wallet = new Wallet('8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63', provider);
   const instance = new Contract(Address.Storage,  ABI.abi, wallet);
 
