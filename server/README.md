@@ -1,0 +1,5 @@
+# Server
+
+```shell
+npm start
+```

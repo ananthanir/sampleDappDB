@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: exampleuser
+      POSTGRES_PASSWORD: examplepass
+      POSTGRES_DB: exampledb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U exampleuser"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - pgnetwork
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "80:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - pgnetwork
+
+networks:
+  pgnetwork:
+
+volumes:
+  postgres_data:

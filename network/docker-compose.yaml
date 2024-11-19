@@ -1,0 +1,64 @@
+services:
+  node1:
+    container_name: node1
+    image: hyperledger/besu:latest
+    command: --data-path=/data --genesis-file=/genesis.json --rpc-http-enabled --rpc-http-api=ETH,NET,QBFT --host-allowlist="*" --rpc-http-cors-origins="all" --profile=ENTERPRISE
+    volumes:
+      - ./Node-1/data:/data
+      - ./genesis.json:/genesis.json
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+      - "30303:30303/udp"
+    networks:
+      bnet:
+        ipv4_address: 192.168.1.100
+
+  node2:
+    container_name: node2
+    image: hyperledger/besu:latest
+    command: --data-path=/data --genesis-file=/genesis.json --bootnodes=enode://a703540c8bb56b00ae8637daf25184c1524e5d05b291d041dc4b2e481eb8f5faaa26a467a11a83677e3c52be67afeafa5ae99f4beb4328bee87052c47a14feb7@192.168.1.100:30303 --p2p-port=30304 --rpc-http-enabled --rpc-http-api=ETH,NET,QBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-http-port=8546 --profile=ENTERPRISE
+    volumes:
+      - ./Node-2/data:/data
+      - ./genesis.json:/genesis.json
+    ports:
+      - "8546:8546"
+      - "30304:30304"
+      - "30304:30304/udp"
+    networks:
+      - bnet
+
+  node3:
+    container_name: node3
+    image: hyperledger/besu:latest
+    command: --data-path=/data --genesis-file=/genesis.json --bootnodes=enode://a703540c8bb56b00ae8637daf25184c1524e5d05b291d041dc4b2e481eb8f5faaa26a467a11a83677e3c52be67afeafa5ae99f4beb4328bee87052c47a14feb7@192.168.1.100:30303 --p2p-port=30305 --rpc-http-enabled --rpc-http-api=ETH,NET,QBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-http-port=8547 --profile=ENTERPRISE
+    volumes:
+      - ./Node-3/data:/data
+      - ./genesis.json:/genesis.json
+    ports:
+      - "8547:8547"
+      - "30305:30305"
+      - "30305:30305/udp"
+    networks:
+      - bnet
+
+  node4:
+    container_name: node4
+    image: hyperledger/besu:latest
+    command: --data-path=/data --genesis-file=/genesis.json --bootnodes=enode://a703540c8bb56b00ae8637daf25184c1524e5d05b291d041dc4b2e481eb8f5faaa26a467a11a83677e3c52be67afeafa5ae99f4beb4328bee87052c47a14feb7@192.168.1.100:30303 --p2p-port=30306 --rpc-http-enabled --rpc-http-api=ETH,NET,QBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-http-port=8548 --profile=ENTERPRISE
+    volumes:
+      - ./Node-4/data:/data
+      - ./genesis.json:/genesis.json
+    ports:
+      - "8548:8548"
+      - "30306:30306"
+      - "30306:30306/udp"
+    networks:
+      - bnet
+
+networks:
+  bnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
