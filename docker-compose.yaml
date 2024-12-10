@@ -55,6 +55,18 @@ services:
     networks:
       - bnet
 
+  explorer:
+    build:
+      context: ./light-explorer
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    command: npm start --host
+    depends_on:
+      - server
+    networks:
+      - bnet
+
   node1:
     container_name: node1
     image: hyperledger/besu:latest
