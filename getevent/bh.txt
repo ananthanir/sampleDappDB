@@ -1,0 +1,42 @@
+                             Port to provide consensus client APIS on (default: 8551)
+JSON-RPC HTTP Options
+      --json-pretty-print-enabled
+                             Enable JSON pretty print format (default: false)
+      --rpc-http-api, --rpc-http-apis=<api name>[ {0,1}, {0,1}<api name>...]...
+                             Comma separated list of APIs to enable on JSON-RPC HTTP service (default: [ETH, NET, WEB3])
+      --rpc-http-api-method-no-auth, --rpc-http-api-methods-no-auth=<api name>[ {0,1}, {0,1}<api name>...]...
+                             Comma separated list of API methods to exclude from RPC authentication services, RPC HTTP authentication must be enabled
+      --rpc-http-authentication-credentials-file=<FILE>
+                             Storage file for JSON-RPC HTTP authentication credentials (default: null)
+      --rpc-http-authentication-enabled
+                             Require authentication for the JSON-RPC HTTP service (default: false)
+      --rpc-http-authentication-jwt-algorithm=<rpcHttpAuthenticationAlgorithm>
+                             Encryption algorithm used for HTTP JWT public key. Possible values are RS256, RS384, RS512, ES256, ES384, HS256, ES512 (default: RS256)
+      --rpc-http-authentication-jwt-public-key-file=<FILE>
+                             JWT public key file for JSON-RPC HTTP authentication
+      --rpc-http-cors-origins=<rpcHttpCorsAllowedOrigins>
+                             Comma separated origin domain URLs for CORS validation (default: none)
+      --rpc-http-enabled     Set to start the JSON-RPC HTTP service (default: false)
+      --rpc-http-host=<HOST> Host for JSON-RPC HTTP to listen on (default: 127.0.0.1)
+      --rpc-http-max-active-connections=<rpcHttpMaxConnections>
+                             Maximum number of HTTP connections allowed for JSON-RPC (default: 80). Once this limit is reached, incoming connections will be rejected.
+      --rpc-http-max-batch-size=<INTEGER>
+                             Specifies the maximum number of requests in a single RPC batch request via RPC. -1 specifies no limit  (default: 1024)
+      --rpc-http-max-request-content-length=<LONG>
+                             Specifies the maximum request content length. (default: 5242880)
+      --rpc-http-port=<PORT> Port for JSON-RPC HTTP to listen on (default: 8545)
+      --rpc-http-tls-ca-clients-enabled
+                             Enable to accept clients certificate signed by a valid CA for client authentication (default: false)
+      --rpc-http-tls-cipher-suite, --rpc-http-tls-cipher-suites=<rpcHttpTlsCipherSuites>[,<rpcHttpTlsCipherSuites>...]...
+                             Comma separated list of TLS cipher suites to support
+      --rpc-http-tls-client-auth-enabled
+                             Enable TLS client authentication for the JSON-RPC HTTP service (default: false)
+      --rpc-http-tls-enabled Enable TLS for the JSON-RPC HTTP service (default: false)
+      --rpc-http-tls-keystore-file=<FILE>
+                             Keystore (PKCS#12) containing key/certificate for the JSON-RPC HTTP service. Required if TLS is enabled.
+      --rpc-http-tls-keystore-password-file=<FILE>
+                             File containing password to unlock keystore for the JSON-RPC HTTP service. Required if TLS is enabled.
+      --rpc-http-tls-known-clients-file=<FILE>
+                             Path to file containing clients certificate common name and fingerprint for client authentication
+      --rpc-http-tls-protocol, --rpc-http-tls-protocols=<rpcHttpTlsProtocols>[,<rpcHttpTlsProtocols>...]...
+                             Comma separated list of TLS protocols to support (default: [TLSv1.3, TLSv1.2])

@@ -1,8 +1,8 @@
-network/Node-1/data/caches/
-network/Node-1/data/database/
-network/Node-2/data/caches/
-network/Node-2/data/database/
-network/Node-3/data/caches/
-network/Node-3/data/database/
-network/Node-4/data/caches/
-network/Node-4/data/database/
+Node-1/data/caches/
+Node-1/data/database/
+Node-2/data/caches/
+Node-2/data/database/
+Node-3/data/caches/
+Node-3/data/database/
+Node-4/data/caches/
+Node-4/data/database/
