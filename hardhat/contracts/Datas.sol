@@ -14,7 +14,7 @@ contract DataStoreMul {
         stringArray = newStrings;
     }
 
-    function storeDatas(string[][] memory newStrings) public {
+    function storeDatas(string[][] memory newStrings) public { 
 
         for (uint i = 0; i < newStrings.length; i++) {
             stringArray.push(newStrings[i]);
