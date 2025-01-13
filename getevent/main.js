@@ -1,11 +1,11 @@
 import { id, Interface, JsonRpcProvider, Contract, Wallet } from "ethers";
 
-const provider = new JsonRpcProvider("http://192.168.3.104:8545");
+// const provider = new JsonRpcProvider("http://192.168.3.104:8545");
 // const provider = new JsonRpcProvider("http://127.0.0.1:8545");
 
 const eventTopic = id("Datas(string,string[])");
 
-const courseTopic = id("NEW2K");
+const courseTopic = id("NEWTRY2");
 
 const certABI = [
   {
@@ -77,7 +77,7 @@ const wallet = new Wallet(
 
 const instance = new Contract(certAddress, certABI, wallet);
 
-const ec = await instance.eventcount("NEW2K")
+const ec = await instance.eventcount("NEWTRY2")
 
 const start = Number(ec[0]);
 const end = Number(ec[1]);

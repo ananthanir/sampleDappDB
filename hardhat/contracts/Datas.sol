@@ -10,6 +10,12 @@ contract DataStoreMul {
         bool firstentry;        
     }
 
+    string public data1;
+
+    function setData1(string memory _data1) public {
+        data1 = _data1;
+    }
+
     mapping(string => string[][]) stringMap;
 
     mapping(string => uint) datacount; // examno => count

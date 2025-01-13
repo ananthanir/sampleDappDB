@@ -11,7 +11,7 @@ module.exports = {
     },
     duk: {
       url: "http://192.168.3.104:8545",
-      accounts: ["8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63"],
+      accounts: ["c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3"],
     },
     hardhat: {
       gas: 9007199254740891, // Increase the gas limit
